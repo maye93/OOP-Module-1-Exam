@@ -1,6 +1,6 @@
 import 'dart:io';
 
-// This class exhibits Encapsulation because...
+// This class exhibits Encapsulation
 class WebsiteUser {
   static String _privAcc = "Mitzi";
   String _privPass = "Password123";
@@ -14,7 +14,7 @@ class WebsiteUser {
   }
 }
 
-// This class exhibits Abstraction because...
+// This class exhibits Abstraction
 class WebsiteSystem extends WebsiteUser {
   checkAcc() {
     while (true) {
@@ -66,14 +66,14 @@ class WebsiteSystem extends WebsiteUser {
   }
 }
 
-// This class exhibits Inheritance because...
+// This class exhibits Inheritance
 class GreetUser extends WebsiteUser {
   greet() {
     print("\nWelcome " + name() + "!");
   }
 }
 
-// This class exhibits Polymorphism because...
+// This class exhibits Polymorphism
 class DisplayName extends WebsiteUser {
   changeName() {
     print("\nNew Display Name:");
