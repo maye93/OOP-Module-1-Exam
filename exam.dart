@@ -84,6 +84,5 @@ class DisplayName extends WebsiteUser {
 }
 
 void main() {
-  WebsiteSystem accountSystem = WebsiteSystem();
-  accountSystem.checkAcc();
+  WebsiteSystem().checkAcc();
 }
