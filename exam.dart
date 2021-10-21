@@ -35,9 +35,31 @@ class WebsiteSystem extends WebsiteUser {
       print("\nPassword: ");
       String? pass = stdin.readLineSync();
       if (_privPass == pass.toString()) {
+        system();
         break;
       } else {
         print("\nWrong password.");
+        continue;
+      }
+    }
+  }
+
+  system() {
+    while (true) {
+      GreetUser().greet();
+      print("\nWhat would you like to do?");
+      print("1 - Change Display Name");
+      print("2 - Logout");
+      String? choice = stdin.readLineSync();
+      if (choice == "1") {
+        DisplayName changeName = DisplayName();
+        changeName.changeName();
+        continue;
+      } else if (choice == "2") {
+        print("\nLoging you out...");
+        exit(0);
+      } else {
+        print("\nType the correct number.");
         continue;
       }
     }
@@ -62,24 +84,6 @@ class DisplayName extends WebsiteUser {
 }
 
 void main() {
-  WebsiteSystem loginUser = WebsiteSystem();
-  loginUser.checkAcc();
-  while (true) {
-    GreetUser().greet();
-    print("\nWhat would you like to do?");
-    print("1 - Change Display Name");
-    print("2 - Logout");
-    String? choice = stdin.readLineSync();
-    if (choice == "1") {
-      DisplayName changeName = DisplayName();
-      changeName.changeName();
-      continue;
-    } else if (choice == "2") {
-      print("\nLoging you out...");
-      exit(0);
-    } else {
-      print("\nType the correct number.");
-      continue;
-    }
-  }
+  WebsiteSystem accountSystem = WebsiteSystem();
+  accountSystem.checkAcc();
 }
